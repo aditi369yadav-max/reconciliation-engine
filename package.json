@@ -5,7 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/app.js",
+    "start": "node -e \"require('./dist/migrate-prod.js')\" && node dist/app.js",
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
     "worker": "ts-node-dev --respawn --transpile-only src/workers/reconciliationWorker.ts",
     "producer": "ts-node src/workers/transactionProducer.ts",
